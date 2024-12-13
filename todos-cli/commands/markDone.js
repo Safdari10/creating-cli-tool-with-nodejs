@@ -1,7 +1,7 @@
 import Conf from "conf";
 import chalk from "chalk";
 
-const conf = new Conf();
+const conf = new Conf({ projectName: "todo-cli" });
 
 export default function markDone({ tasks }) {
     let todoList = conf.get("todoList")
