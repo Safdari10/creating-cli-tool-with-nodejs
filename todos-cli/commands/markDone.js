@@ -1,18 +1,18 @@
 import Conf from "conf";
 import chalk from "chalk";
 
-const conf = new Conf({ projectName: "todo-cli" });
+const conf = new Conf({ projectName: "todos-cli" });
 
-export default function markDone({ tasks }) {
+export default function markDone(options) {
     let todoList = conf.get("todo-list");
 
     if(todoList) {
         //loop over the todo list tasks
         todoList = todoList.map((task, index) => {
             //check if the user specified the tasks to mark as done
-            if (tasks) {
+            if (options.task) {
                 //check if this task is one of the tasks the user specified
-                if (tasks.indexOf(index.toString()) !== -1) {
+                if (options.task.indexOf(index.toString()) !== -1) {
                     //mark only specified tasks by user as done
                     task.done = true;
                 }
