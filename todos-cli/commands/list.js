@@ -8,7 +8,7 @@ export default function list() {
 
     if(todoList && todoList.length) {
         //user has tasks in todoList
-        console.log(chalk.backgroundColorNames.bold("Tasks in green are done. Tasks in yellow are still not done."));
+        console.log(chalk.bold.bgGreen("Tasks in green are done. Tasks in yellow are still not done."));
 
         todoList.forEach((task, index) => {
             if(task.done) {
