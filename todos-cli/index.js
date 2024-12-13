@@ -14,4 +14,11 @@ program
     .description("Add a new task to the TODO list")
     .action(add)    
 
+program
+    .command("mark-done")
+    .description("Mark a task as done")
+    .action(markDone)
+
+
+
 program.parse();
