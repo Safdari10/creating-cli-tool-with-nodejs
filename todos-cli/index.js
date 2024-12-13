@@ -17,6 +17,7 @@ program
 program
     .command("mark-done")
     .description("Mark a task as done")
+    .option("-t, --task <tasks...>", "The task number to mark as done. if not specified, all tasks will be marked as done")
     .action(markDone)
 
 
