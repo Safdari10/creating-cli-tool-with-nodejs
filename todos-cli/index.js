@@ -8,19 +8,17 @@ import markDone from './commands/markDone.js';
 program
     .command("list")
     .description("List all the TODO tasks")
-    .action(list)
+    .action(list);
 
 program
     .command("add <task>")
     .description("Add a new task to the TODO list")
-    .action(add)    
+    .action(add);
 
 program
     .command("markdone")
     .description("Mark a task as done")
     .option("-t, --task <tasks...>", "The task number to mark as done. if not specified, all tasks will be marked as done")
-    .action(markDone)
-
-
+    .action(markDone);
 
 program.parse();
