@@ -4,7 +4,7 @@ import chalk from "chalk";
 const conf = new Conf({ projectName: "todo-cli" });
 
 export default function markDone({ tasks }) {
-    let todoList = conf.get("todoList")
+    let todoList = conf.get("todo-list");
 
     if(todoList) {
         //loop over the todo list tasks
@@ -14,18 +14,17 @@ export default function markDone({ tasks }) {
                 //check if this task is one of the tasks the user specified
                 if (tasks.indexOf(index.toString()) !== -1) {
                     //mark only specified tasks by user as done
-                    task.done = true
+                    task.done = true;
                 }
             } else {
                 //if the user didn't specify tasks, mark all tasks as done
-                task.done = true
+                task.done = true;
             }
-            return task
-        })
+            return task;
+        });
         //set the new todo-list
-        conf.set("todo-List", todoList)
+        conf.set("todo-list", todoList);
     }
     //show the user a message
-    console.log(chalk.green.bold("Tasks have been marked as done as successfully"))
-
+    console.log(chalk.green.bold("Tasks have been marked as done successfully"));
 }
